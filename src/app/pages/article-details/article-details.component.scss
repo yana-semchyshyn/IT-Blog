@@ -1,0 +1,21 @@
+.card{
+    min-width: 610px;
+    margin: 0 auto;
+    .article-header{
+        position: relative;
+        .mat-card{
+            &-header{
+                position: absolute;
+                color: white;
+                bottom: 25px;
+                left: 0;
+            }
+            &-title{
+                font-size: 30px;
+            }
+        }
+    }
+    button{
+        margin-left: 10px;
+    }
+}

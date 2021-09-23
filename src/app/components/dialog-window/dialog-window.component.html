@@ -1,0 +1,47 @@
+<h1 mat-dialog-title>Add new article</h1>
+<div mat-dialog-content>
+    <form [formGroup]="articleForm">
+        <mat-form-field appearance="fill">
+            <mat-label>Category</mat-label>
+            <mat-select formControlName="category">
+                <mat-option *ngFor="let category of categories" [value]="category">{{ category
+                    }}</mat-option>
+            </mat-select>
+            <mat-error>
+                The category is required
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Image</mat-label>
+            <input matInput formControlName="image">
+            <mat-error>
+                The image is required
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Title</mat-label>
+            <input matInput formControlName="title">
+            <mat-error>
+                The title is required
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Short description</mat-label>
+            <textarea matInput formControlName="shortDescription"></textarea>
+            <mat-error>
+                The short description is required
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Long description</mat-label>
+            <textarea matInput formControlName="longDescription"></textarea>
+            <mat-error>
+                The long description is required
+            </mat-error>
+        </mat-form-field>
+    </form>
+</div>
+<div mat-dialog-actions>
+    <button mat-button color="primary" mat-dialog-close>Close</button>
+    <button mat-button color="accent" (click)="onSubmit(articleForm.value)" type="submit" mat-dialog-close [disabled]="!articleForm.valid">Add</button>
+</div>

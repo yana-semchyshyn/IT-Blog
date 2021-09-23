@@ -1,0 +1,15 @@
+<div *ngFor="let article of articles">
+    <mat-card class="card" style="width: 250px;">
+        <mat-card-header>
+            <mat-card-title>{{article?.title}}</mat-card-title>
+        </mat-card-header>
+        <img class="card-image" mat-card-image src="{{article?.image}}" alt="Article Image">
+        <mat-card-content>
+            <p class="text">{{article?.shortDescription}}</p>
+        </mat-card-content>
+        <mat-card-actions class="btn-container">
+            <button mat-raised-button color="primary" [routerLink]="['/articles', article.category, article.id]">READ
+                MORE</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

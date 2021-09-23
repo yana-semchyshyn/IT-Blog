@@ -1,0 +1,15 @@
+<main>
+    <app-header></app-header>
+    <mat-drawer-container class="example-container" autosize>
+        <mat-drawer #sidenav class="example-sidenav" mode="side">
+            <mat-nav-list>
+                <a mat-list-item [routerLink]="[ '' ]" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }"> All </a>
+                <a mat-list-item *ngFor="let category of categories" [routerLink]="[ '/articles/'+category ]"
+                    routerLinkActive="active-link"> {{ category }} </a>
+            </mat-nav-list>
+        </mat-drawer>
+        <div class="example-sidenav-content" style="margin-top: 80px;">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-drawer-container>
+</main>

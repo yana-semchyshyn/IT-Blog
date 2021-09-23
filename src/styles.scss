@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.card {
+  width: 250px;
+  min-height: 500px;
+  position: relative;
+  margin: 30px 40px;
+  
+  .text{
+    padding: 0 10px;
+    text-align: justify;
+  }
+  
+  .card-image{
+    object-fit: cover;
+    height: 250px;
+  }
+  .btn-container{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+.article-header .mat-card-header-text{
+  margin: 0 10px;
+}
+
+app-articles, app-articles-sorted .example-sidenav-content{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
